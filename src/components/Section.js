@@ -4,36 +4,42 @@ import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
 
 
 
-function Section() {
+function Section({title , description , backgroundImg , leftbtn , rightbtn}) {
   const { keyframes, animationOptions } = bounce;
   const { ref } = useWebAnimations({
     keyframes,
     animationOptions: {
       ...animationOptions,
       delay: 1000, // Delay 1s
-      duration: 1000 ,// Speed up the animation
+      duration: 1200 ,// Speed up the animation
       iterations : Infinity,
       
     },
   });
   return (
-    <Wrap>
+    <Wrap bgImg = {backgroundImg}>
       <ItemText>
-      <h1>Model S</h1>
-      <p>Order Online For Touchless Delivery</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
 
       </ItemText>
 
 <Buttons>
       <ButtonGroup>
         <LeftButton>
-          Custom Order
+          {leftbtn}
         </LeftButton>
 
-        <RightButton>
-            Existing Inventory
-          </RightButton>
 
+      { rightbtn &&
+      
+      <RightButton>
+      {rightbtn}
+     </RightButton>
+
+      
+      }
+     
       </ButtonGroup>
       <DownArrow ref={ref}  src='./images/down-arrow.svg'/>
       </Buttons>
@@ -49,7 +55,7 @@ const Wrap = styled.div`
 
 width:  100vw;
 height: 100vh;
-background-image : url('/images/model-s.jpg');
+background-image : ${props => `url("/images/${props.bgImg}")`};
 background-size : cover ;
 background-position : center ;
 background-repeat : no-repeat;

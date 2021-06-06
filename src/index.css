@@ -9,3 +9,7 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+a {
+  text-transform: none;
+  text-decoration: none;
+}
