@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
+import Fade from 'react-reveal/Fade';
+
 
 
 
@@ -18,13 +20,19 @@ function Section({title , description , backgroundImg , leftbtn , rightbtn}) {
   });
   return (
     <Wrap bgImg = {backgroundImg}>
+              <Fade bottom>
+
       <ItemText>
       <h1>{title}</h1>
       <p>{description}</p>
 
       </ItemText>
+      </Fade>
+
 
 <Buttons>
+<Fade bottom>
+
       <ButtonGroup>
         <LeftButton>
           {leftbtn}
@@ -41,6 +49,8 @@ function Section({title , description , backgroundImg , leftbtn , rightbtn}) {
       }
      
       </ButtonGroup>
+      </Fade>
+
       <DownArrow ref={ref}  src='./images/down-arrow.svg'/>
       </Buttons>
 
