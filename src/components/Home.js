@@ -15,6 +15,7 @@ function Home() {
       backgroundImg = "model-s.jpg"
       leftbtn = "Custom Order"
       rightbtn = "Existing Inventory"
+      down = {true}
     />
 
 <Section

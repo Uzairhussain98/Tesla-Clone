@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 
 
-function Section({title , description , backgroundImg , leftbtn , rightbtn}) {
+function Section({title , description , backgroundImg , leftbtn , rightbtn ,down}) {
   const { keyframes, animationOptions } = bounce;
   const { ref } = useWebAnimations({
     keyframes,
@@ -50,8 +50,9 @@ function Section({title , description , backgroundImg , leftbtn , rightbtn}) {
      
       </ButtonGroup>
       </Fade>
-
-      <DownArrow ref={ref}  src='./images/down-arrow.svg'/>
+    { down  ?
+      <DownArrow ref={ref}  src='./images/down-arrow.svg'/> : null
+    }
       </Buttons>
 
     </Wrap>
